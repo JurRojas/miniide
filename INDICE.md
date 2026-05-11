@@ -13,11 +13,11 @@ Implementa todas las estructuras de datos requeridas: **Lista Enlazada**, **Pila
 
 ```
 proyecto/
-├── 📄 INDICE.md                    ← Estás aquí
-├── 🏃 Ejecución Rápida
+├──  INDICE.md                    ← Estás aquí
+├──  Ejecución Rápida
 │   ├── proyecto_ide.exe            ← IDE Interactivo (COMPILADO)
 │   └── demo.exe                    ← Demostración Automática (COMPILADO)
-├── 💻 Código Fuente
+├──  Código Fuente
 │   ├── proyecto_ide.cpp            ← Programa principal (1050+ líneas)
 │   └── demo.cpp                    ← Demostración (500+ líneas)
 └──  Documentación
@@ -46,7 +46,7 @@ Acceso al menú de usuario con todas las opciones.
 
 ---
 
-## 📖 Qué Leer Según Tu Necesidad
+##  Qué Leer Según Tu Necesidad
 
 | Si quieres... | Lee... |
 |---|---|
