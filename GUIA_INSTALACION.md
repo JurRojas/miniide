@@ -1,6 +1,5 @@
-# GUÍA DE INSTALACIÓN Y USO - Mini IDE con Notación Prefija/Postfija
+# GUÍA DE INSTALACIÓN Y USO
 
-## 📁 Archivos Generados
 
 ### 1. **proyecto_ide.cpp** - Programa Principal Interactivo
 - Menú completo con interfaz visual
@@ -18,7 +17,7 @@
 
 ---
 
-## 🚀 Cómo Ejecutar
+## Cómo Ejecutar
 
 ### Opción 1: Ejecutar la Demostración (Recomendado para ver ejemplos)
 ```bash

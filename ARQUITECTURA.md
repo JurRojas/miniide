@@ -178,7 +178,7 @@ class Visualizer {
 
 ---
 
-## 🔄 Flujo de Ejecución Completo
+## Flujo de Ejecución Completo
 
 ### Cuando el usuario selecciona Opción 2 (Ejecutar):
 
