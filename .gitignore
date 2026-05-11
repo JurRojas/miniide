@@ -1,0 +1,23 @@
+# Compiled binaries
+*.exe
+*.o
+*.obj
+*.out
+*.dll
+*.so
+*.dylib
+
+# Build directories
+build/
+bin/
+
+# IDE files
+*.user
+*.suo
+*.vscode/
+
+# Logs
+*.log
+
+# Other
+*.DS_Store
