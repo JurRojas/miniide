@@ -1,6 +1,6 @@
 # ARQUITECTURA Y DECISIONES TÉCNICAS
 
-## 📐 Arquitectura General
+## Arquitectura General
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -36,7 +36,7 @@
 
 ---
 
-## 🎯 Decisiones de Diseño
+##  Decisiones de Diseño
 
 ### 1. Uso de Plantillas (Templates)
 
@@ -205,7 +205,7 @@ class Visualizer {
 
 ---
 
-## 📊 Complejidad de Operaciones
+## Complejidad de Operaciones
 
 ### Stack Operations
 | Operación | Complejidad | Notas |
@@ -228,7 +228,7 @@ class Visualizer {
 
 ---
 
-## 🎓 Conceptos Clave Demostrados
+## Conceptos Clave Demostrados
 
 ### 1. Recursión vs Iteración
 ```
@@ -280,7 +280,7 @@ Evaluación recursiva
 
 ---
 
-## 🔐 Validaciones Implementadas
+## Validaciones Implementadas
 
 ### 1. División por Cero
 ```cpp
@@ -311,7 +311,7 @@ try {
 
 ---
 
-## 📝 Extensiones Futuras Posibles
+## Extensiones Futuras Posibles
 
 1. **Funciones Definidas por Usuario**
    ```cpp
@@ -342,19 +342,18 @@ try {
 
 ---
 
-## 🏆 Puntos Fuertes del Proyecto
+## Puntos Fuertes del Proyecto
 
-✅ **Código bien estructurado**: Clases separadas, responsabilidades claras
-✅ **Sin dependencias externas**: Solo C++ estándar
-✅ **Manejo robusto de errores**: Validaciones en cada paso
-✅ **Documentación clara**: README y guías de uso
-✅ **Interfaz visual atractiva**: Caracteres ASCII formateados
-✅ **Demostraciones automáticas**: Ejemplo funcional completo
-✅ **Recursión y Pilas explícitas**: Ambos paradigmas demostrados
-
+ **Código bien estructurado**: Clases separadas, responsabilidades claras
+ **Sin dependencias externas**: Solo C++ estándar
+ **Manejo robusto de errores**: Validaciones en cada paso
+ **Documentación clara**: README y guías de uso
+ **Interfaz visual atractiva**: Caracteres ASCII formateados
+ **Demostraciones automáticas**: Ejemplo funcional completo
+ **Recursión y Pilas explícitas**: Ambos paradigmas demostrados
 ---
 
-## 📚 Referencias de Implementación
+## Referencias de Implementación
 
 ### Evaluación de Expresiones
 - [Polish Notation (Prefija)](https://en.wikipedia.org/wiki/Polish_notation)
