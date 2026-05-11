@@ -6,11 +6,10 @@
 #include <iomanip>
 #include <cstdlib>
 #include <cmath>
+#include <windows.h>
 using namespace std;
 
-// ============================================================================
-//                       ESTRUCTURAS DE DATOS MANUALES
-// ============================================================================
+//                       ESTRUCTURAS DE DATOS 
 
 template <typename T>
 struct Node {
@@ -138,22 +137,22 @@ public:
     }
     
     void printTrace() const {
-        cout << "\n╔════════════════════════════════════════════╗" << endl;
-        cout << "║       EXECUTION TRACE (Rastreo de Pila)     ║" << endl;
-        cout << "╠════════════════════════════════════════════╣" << endl;
+        cout << "\n+=============================================+" << endl;
+        cout << "|       EXECUTION TRACE (Rastreo de Pila)     |" << endl;
+        cout << "+=============================================+" << endl;
         
         if (trace.empty()) {
-            cout << "║  (Sin operaciones aún)                       ║" << endl;
+            cout << "|  (Sin operaciones aún)                       |" << endl;
         } else {
             for (const auto& op : trace) {
-                string line = "║ " + op;
+                string line = "| " + op;
                 while (line.length() < 43) line += " ";
-                line += "║";
+                line += "|";
                 cout << line << endl;
             }
         }
         
-        cout << "╚════════════════════════════════════════════╝" << endl;
+        cout << "+=============================================+" << endl;
     }
     
     void clear() {
@@ -320,17 +319,21 @@ public:
 void demoDemo() {
     system("clear || cls");
     
-    cout << "\n╔══════════════════════════════════════════════════════════════════╗" << endl;
-    cout << "║        DEMOSTRACIÓN - MINI IDE CON NOTACIÓN PREFIJA/POSTFIJA      ║" << endl;
-    cout << "║        Proyecto: Algoritmos y Estructuras de Datos - UPIIT         ║" << endl;
-    cout << "╚══════════════════════════════════════════════════════════════════╝" << endl;
+    // Configurar consola para caracteres UTF-8 (soporte para español)
+    SetConsoleCP(CP_UTF8);
+    SetConsoleOutputCP(CP_UTF8);
+    
+    cout << "\n+==================================================================+" << endl;
+    cout << "|        DEMOSTRACIÓN - MINI IDE CON NOTACIÓN PREFIJA/POSTFIJA      |" << endl;
+    cout << "|        Proyecto: Algoritmos y Estructuras de Datos - UPIIT         |" << endl;
+    cout << "+==================================================================+" << endl;
     
     SimpleInterpreter interpreter;
     
     // ========== EJEMPLO 1: NOTACIÓN PREFIJA BÁSICA ==========
-    cout << "\n\n╔════════════════════════════════════════════════════════════════════╗" << endl;
-    cout << "║ EJEMPLO 1: Notación Prefija Básica - + 5 3                          ║" << endl;
-    cout << "╚════════════════════════════════════════════════════════════════════╝" << endl;
+    cout << "\n\n+=======================================================================+" << endl;
+    cout << "| EJEMPLO 1: Notación Prefija Básica - + 5 3                          |" << endl;
+    cout << "+=======================================================================+" << endl;
     
     try {
         double result = interpreter.evaluatePrefix("+ 5 3");
@@ -343,9 +346,9 @@ void demoDemo() {
     }
     
     // ========== EJEMPLO 2: NOTACIÓN PREFIJA COMPLEJA ==========
-    cout << "\n\n╔════════════════════════════════════════════════════════════════════╗" << endl;
-    cout << "║ EJEMPLO 2: Notación Prefija Compleja - + * 2 3 4                    ║" << endl;
-    cout << "╚════════════════════════════════════════════════════════════════════╝" << endl;
+    cout << "\n\n+=======================================================================+" << endl;
+    cout << "| EJEMPLO 2: Notación Prefija Compleja - + * 2 3 4                    |" << endl;
+    cout << "+=======================================================================+" << endl;
     
     try {
         double result = interpreter.evaluatePrefix("+ * 2 3 4");
@@ -358,9 +361,9 @@ void demoDemo() {
     }
     
     // ========== EJEMPLO 3: NOTACIÓN POSTFIJA BÁSICA ==========
-    cout << "\n\n╔════════════════════════════════════════════════════════════════════╗" << endl;
-    cout << "║ EJEMPLO 3: Notación Postfija Básica - 5 3 +                         ║" << endl;
-    cout << "╚════════════════════════════════════════════════════════════════════╝" << endl;
+    cout << "\n\n+=======================================================================+" << endl;
+    cout << "| EJEMPLO 3: Notación Postfija Básica - 5 3 +                         |" << endl;
+    cout << "+=======================================================================+" << endl;
     
     try {
         double result = interpreter.evaluatePostfix("5 3 +");
@@ -373,9 +376,9 @@ void demoDemo() {
     }
     
     // ========== EJEMPLO 4: NOTACIÓN POSTFIJA COMPLEJA ==========
-    cout << "\n\n╔════════════════════════════════════════════════════════════════════╗" << endl;
-    cout << "║ EJEMPLO 4: Notación Postfija Compleja - 2 3 * 4 +                   ║" << endl;
-    cout << "╚════════════════════════════════════════════════════════════════════╝" << endl;
+    cout << "\n\n+=======================================================================+" << endl;
+    cout << "| EJEMPLO 4: Notación Postfija Compleja - 2 3 * 4 +                   |" << endl;
+    cout << "+=======================================================================+" << endl;
     
     try {
         double result = interpreter.evaluatePostfix("2 3 * 4 +");
@@ -388,9 +391,9 @@ void demoDemo() {
     }
     
     // ========== EJEMPLO 5: CON VARIABLES ==========
-    cout << "\n\n╔════════════════════════════════════════════════════════════════════╗" << endl;
-    cout << "║ EJEMPLO 5: Prefija con Variables - + $x 10 (donde $x = 15)          ║" << endl;
-    cout << "╚════════════════════════════════════════════════════════════════════╝" << endl;
+    cout << "\n\n+=======================================================================+" << endl;
+    cout << "| EJEMPLO 5: Prefija con Variables - + $x 10 (donde $x = 15)          |" << endl;
+    cout << "+=======================================================================+" << endl;
     
     try {
         interpreter.setVariable("x", 15);
@@ -405,9 +408,9 @@ void demoDemo() {
     }
     
     // ========== EJEMPLO 6: POTENCIA ==========
-    cout << "\n\n╔════════════════════════════════════════════════════════════════════╗" << endl;
-    cout << "║ EJEMPLO 6: Potencia - ^ 2 3 (Prefija) = 2^3 = 8                     ║" << endl;
-    cout << "╚════════════════════════════════════════════════════════════════════╝" << endl;
+    cout << "\n\n+=======================================================================+" << endl;
+    cout << "| EJEMPLO 6: Potencia - ^ 2 3 (Prefija) = 2^3 = 8                     |" << endl;
+    cout << "+=======================================================================+" << endl;
     
     try {
         double result = interpreter.evaluatePrefix("^ 2 3");
@@ -420,9 +423,9 @@ void demoDemo() {
     }
     
     // ========== EJEMPLO 7: OPERACIÓN ANIDADA ==========
-    cout << "\n\n╔════════════════════════════════════════════════════════════════════╗" << endl;
-    cout << "║ EJEMPLO 7: Operación Anidada - - / 10 2 3 (Prefija)                 ║" << endl;
-    cout << "╚════════════════════════════════════════════════════════════════════╝" << endl;
+    cout << "\n\n+=======================================================================+" << endl;
+    cout << "| EJEMPLO 7: Operación Anidada - - / 10 2 3 (Prefija)                 |" << endl;
+    cout << "+=======================================================================+" << endl;
     
     try {
         double result = interpreter.evaluatePrefix("- / 10 2 3");
@@ -434,9 +437,9 @@ void demoDemo() {
         cout << "Error: " << e.what() << endl;
     }
     
-    cout << "\n\n╔════════════════════════════════════════════════════════════════════╗" << endl;
-    cout << "║                   FIN DE LA DEMOSTRACIÓN                             ║" << endl;
-    cout << "╚════════════════════════════════════════════════════════════════════╝" << endl;
+    cout << "\n\n+=======================================================================+" << endl;
+    cout << "|                   FIN DE LA DEMOSTRACIÓN                             |" << endl;
+    cout << "+=======================================================================+" << endl;
     cout << "\n✓ Todas las estructuras de datos (Stack, Queue, LinkedList) funcionan correctamente." << endl;
     cout << "✓ Evaluación prefija recursiva implementada." << endl;
     cout << "✓ Evaluación postfija iterativa implementada." << endl;

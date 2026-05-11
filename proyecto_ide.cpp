@@ -6,11 +6,11 @@
 #include <iomanip>
 #include <cstdlib>
 #include <cmath>
+#include <windows.h>
 using namespace std;
 
-// ============================================================================
-//                       ESTRUCTURAS DE DATOS MANUALES
-// ============================================================================
+//                       ESTRUCTURAS DE DATOS 
+
 
 
 template <typename T>
@@ -219,22 +219,22 @@ public:
     }
     
     void printTrace() const {
-        cout << "\n╔════════════════════════════════════════════╗" << endl;
-        cout << "║       EXECUTION TRACE (Rastreo de Pila)     ║" << endl;
-        cout << "╠════════════════════════════════════════════╣" << endl;
+        cout << "\n+=============================================+" << endl;
+        cout << "|       EXECUTION TRACE (Rastreo de Pila)     |" << endl;
+        cout << "+=============================================+" << endl;
         
         if (trace.empty()) {
-            cout << "║  (Sin operaciones aún)                       ║" << endl;
+            cout << "|  (Sin operaciones aún)                       |" << endl;
         } else {
             for (const auto& op : trace) {
-                string line = "║ " + op;
+                string line = "| " + op;
                 while (line.length() < 43) line += " ";
-                line += "║";
+                line += "|";
                 cout << line << endl;
             }
         }
         
-        cout << "╚════════════════════════════════════════════╝" << endl;
+        cout << "+=============================================+" << endl;
     }
     
     void clear() {
@@ -492,25 +492,25 @@ public:
     }
     
     void displayCode() const {
-        cout << "\n╔════════════════════════════════════════════╗" << endl;
-        cout << "║         CODE EDITOR (Editor de Código)      ║" << endl;
-        cout << "╠════════════════════════════════════════════╣" << endl;
+        cout << "\n+=============================================+" << endl;
+        cout << "|         CODE EDITOR (Editor de Código)      |" << endl;
+        cout << "+=============================================+" << endl;
         
         Node<CodeLine>* current = codeLines.getHead();
         if (current == nullptr) {
-            cout << "║  (Código vacío)                             ║" << endl;
+            cout << "|  (Código vacío)                             |" << endl;
         } else {
             while (current != nullptr) {
-                string line = "║ L" + to_string(current->data.lineNumber) + ": " + 
+                string line = "| L" + to_string(current->data.lineNumber) + ": " + 
                              current->data.content;
                 while (line.length() < 43) line += " ";
-                line += "║";
+                line += "|";
                 cout << line << endl;
                 current = current->next;
             }
         }
         
-        cout << "╚════════════════════════════════════════════╝" << endl;
+        cout << "+=============================================+" << endl;
     }
     
     Queue<string>& getExecutionQueue() {
@@ -536,62 +536,62 @@ public:
         system("clear || cls");
         
         cout << "\n";
-        cout << "╔══════════════════════════════════════════════════════════════════╗" << endl;
-        cout << "║        MINI IDE - INTÉRPRETE CON NOTACIÓN PREFIJA/POSTFIJA       ║" << endl;
-        cout << "║        Algoritmos y Estructuras de Datos - UPIIT 2do Parcial     ║" << endl;
-        cout << "╚══════════════════════════════════════════════════════════════════╝" << endl;
+        cout << "+==================================================================+" << endl;
+        cout << "|        MINI IDE - INTÉRPRETE CON NOTACIÓN PREFIJA/POSTFIJA       |" << endl;
+        cout << "|        Algoritmos y Estructuras de Datos - UPIIT 2do Parcial     |" << endl;
+        cout << "+==================================================================+" << endl;
         
         cout << "\n[Tipo de Notación: " << notationType << "]\n" << endl;
         
         editor.displayCode();
         
         cout << "\n";
-        cout << "╔════════════════════════════════════════════╗" << endl;
-        cout << "║    OUTPUT (Salida)                         ║" << endl;
-        cout << "╠════════════════════════════════════════════╣" << endl;
-        cout << "║ Resultado: " << interpreter.getLastOutput() << endl;
-        cout << "╚════════════════════════════════════════════╝" << endl;
+        cout << "+=============================================+" << endl;
+        cout << "|    OUTPUT (Salida)                         |" << endl;
+        cout << "+=============================================+" << endl;
+        cout << "| Resultado: " << interpreter.getLastOutput() << endl;
+        cout << "+=============================================+" << endl;
         
         const_cast<Interpreter&>(interpreter).getTracer().printTrace();
         
         // Mostrar variables
-        cout << "\n╔════════════════════════════════════════════╗" << endl;
-        cout << "║    VARIABLES                               ║" << endl;
-        cout << "╠════════════════════════════════════════════╣" << endl;
+        cout << "\n+=============================================+" << endl;
+        cout << "|    VARIABLES                               |" << endl;
+        cout << "+=============================================+" << endl;
         
         const auto& vars = const_cast<Interpreter&>(interpreter).getVariables();
         if (vars.empty()) {
-            cout << "║ (Sin variables definidas)                   ║" << endl;
+            cout << "| (Sin variables definidas)                   |" << endl;
         } else {
             for (const auto& [name, value] : vars) {
-                string line = "║ $" + name + " = " + to_string(value);
+                string line = "| $" + name + " = " + to_string(value);
                 while (line.length() < 43) line += " ";
-                line += "║";
+                line += "|";
                 cout << line << endl;
             }
         }
-        cout << "╚════════════════════════════════════════════╝\n" << endl;
+        cout << "+=============================================+\n" << endl;
     }
     
     static void showMenu() {
-        cout << "\n╔════════════════════════════════════════════╗" << endl;
-        cout << "║              MENÚ PRINCIPAL                 ║" << endl;
-        cout << "╠════════════════════════════════════════════╣" << endl;
-        cout << "║ 1. Agregar línea de código                 ║" << endl;
-        cout << "║ 2. Ejecutar código                         ║" << endl;
-        cout << "║ 3. Cambiar notación (Prefija/Postfija)     ║" << endl;
-        cout << "║ 4. Limpiar editor                          ║" << endl;
-        cout << "║ 5. Ver ejemplos de sintaxis                ║" << endl;
-        cout << "║ 6. Salir                                   ║" << endl;
-        cout << "╚════════════════════════════════════════════╝" << endl;
+        cout << "\n+=============================================+" << endl;
+        cout << "|              MENÚ PRINCIPAL                 |" << endl;
+        cout << "+=============================================+" << endl;
+        cout << "| 1. Agregar línea de código                 |" << endl;
+        cout << "| 2. Ejecutar código                         |" << endl;
+        cout << "| 3. Cambiar notación (Prefija/Postfija)     |" << endl;
+        cout << "| 4. Limpiar editor                          |" << endl;
+        cout << "| 5. Ver ejemplos de sintaxis                |" << endl;
+        cout << "| 6. Salir                                   |" << endl;
+        cout << "+=============================================+" << endl;
         cout << "Seleccione opción: ";
     }
     
     static void showSyntaxExamples() {
         system("clear || cls");
-        cout << "\n╔════════════════════════════════════════════════════════════════════╗" << endl;
-        cout << "║              EJEMPLOS DE SINTAXIS                                  ║" << endl;
-        cout << "╚════════════════════════════════════════════════════════════════════╝" << endl;
+        cout << "\n+=======================================================================+" << endl;
+        cout << "|              EJEMPLOS DE SINTAXIS                                  |" << endl;
+        cout << "+=======================================================================+" << endl;
         
         cout << "\n▶ NOTACIÓN PREFIJA (Operador primero):" << endl;
         cout << "  + 5 3                    => 5 + 3 = 8" << endl;
@@ -633,10 +633,14 @@ int main() {
     string notationType = "PREFIJA";
     int choice;
     
-    cout << "╔════════════════════════════════════════════════════════════════════╗" << endl;
-    cout << "║        BIENVENIDO AL MINI IDE CON NOTACIÓN PREFIJA/POSTFIJA        ║" << endl;
-    cout << "║        Proyecto: Algoritmos y Estructuras de Datos - UPIIT         ║" << endl;
-    cout << "╚════════════════════════════════════════════════════════════════════╝" << endl;
+    // Configurar consola para caracteres UTF-8 (soporte para español)
+    SetConsoleCP(CP_UTF8);
+    SetConsoleOutputCP(CP_UTF8);
+    
+    cout << "+=======================================================================+" << endl;
+    cout << "|        MINI IDE CON NOTACIÓN PREFIJA/POSTFIJA                      |" << endl;
+    cout << "|        Algoritmos y Estructuras de Datos - UPIIT                   |" << endl;
+    cout << "+=======================================================================+" << endl;
     
     while (true) {
         Visualizer::displayInterface(editor, interpreter, notationType);
@@ -657,9 +661,9 @@ int main() {
             
             case 2: {
                 system("clear || cls");
-                cout << "\n╔════════════════════════════════════════════╗" << endl;
-                cout << "║  Ejecutando todas las líneas en la Cola...  ║" << endl;
-                cout << "╚════════════════════════════════════════════╝\n" << endl;
+                cout << "\n+=============================================+" << endl;
+                cout << "|  Ejecutando todas las líneas en la Cola...  |" << endl;
+                cout << "+=============================================+\n" << endl;
                 
                 Queue<string>& execQueue = editor.getExecutionQueue();
                 int instrNum = 1;
@@ -705,7 +709,7 @@ int main() {
             }
             
             case 6: {
-                cout << "\n¡Gracias por usar el Mini IDE! Hasta luego." << endl;
+                cout << "\nPrograma finalizado" << endl;
                 return 0;
             }
             
